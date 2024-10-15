@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Filtro</title>
+    <style>
+        .filter-container {
+            display: flex;
+            align-items: center;
+            margin: 20px; /* Espaciado alrededor del contenedor */
+        }
+
+        .filter-button {
+            background: transparent;
+            border: none;
+            font-size: 24px; /* Tamaño del ícono */
+            cursor: pointer;
+            margin-right: 10px; /* Espacio entre el ícono y el menú */
+        }
+
+        .filter-menu {
+            margin-left: 10px; /* Espacio a la izquierda del menú */
+        }
+
+        .category-filter {
+            padding: 5px; /* Espaciado interno para el menú */
+            font-size: 16px; /* Tamaño de la fuente */
+        }
+    </style>
+</head>
+<body>
+    <div class="filter-container">
+        <button class="filter-button" id="filter-button">
+            &#9776; <!-- Ícono de hamburguesa -->
+        </button>
+        <div id="filter-menu" class="filter-menu" style="display: none;">
+            <select id="category-filter" class="category-filter">
+                <option value="all">Todos</option>
+                <option value="earrings">Pendientes</option>
+                <option value="bracelets">Pulseras</option>
+                <option value="necklaces">Collares</option>
+                <option value="rings">Anillos</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Asegúrate de que el evento se esté añadiendo correctamente
+            const filterButton = document.getElementById('filter-button');
+            const filterMenu = document.getElementById('filter-menu');
+
+            // Manejo del evento click para mostrar/ocultar el menú
+            filterButton.addEventListener('click', function() {
+                if (filterMenu.style.display === "none" || filterMenu.style.display === "") {
+                    filterMenu.style.display = "block"; // Mostrar el menú
+                } else {
+                    filterMenu.style.display = "none"; // Ocultar el menú
+                }
+            });
+        });
+    </script>
+</body>
+</html>

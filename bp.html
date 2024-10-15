@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreakPoint - Catálogo de Ventas</title>
+    <link rel="stylesheet" href="bp.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="bp.png" alt="Logo" id="logo">
+        </div>
+        <!-- Cuadro de búsqueda -->
+        <input type="text" id="search-input" placeholder="Buscar productos..." oninput="filterProducts()" />
+        
+        <!-- Filtro por categoría -->
+        <select id="category-select" onchange="filterProductsByCategory()">
+            <option value="all">Todos</option>
+            <option value="pulsera">Pulseras</option>
+            <option value="collar">Collares</option>
+            <option value="arito">Pendientes</option>
+            <option value="anillo">Anillos</option>
+        </select>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li>
+                <a href="javascript:void(0)" class="dropdown-btn">Más de nosotros</a>
+                <div class="dropdown-content">
+                    <a href="#historia">Historia</a>
+                    <a href="#mision">Misión</a>
+                    <a href="#vision">Visión</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="dropdown-btn">Próximamente</a>
+                <div class="dropdown-content">
+                    <a href="#nuevos-productos">Nuevos productos</a>
+                    <a href="#eventos">Eventos</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="dropdown-btn">Contacto</a>
+                <div class="dropdown-content">
+                    <a href="#formulario">Formulario</a>
+                    <a href="#redes-sociales">Redes Sociales</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!-- Sección de Catálogo -->
+    <section id="catalogo">
+        <h2>Catálogo de Productos</h2>
+    
+        <div class="catalog-container" id="catalog-container">
+            <!-- Los productos se agregarán dinámicamente con JavaScript -->
+        </div>
+    </section>
+    
+
+    <section id="historia">
+        <h2>Historia</h2>
+        <p>Aquí va la información sobre la historia.</p>
+    </section>
+    
+    <section id="mision">
+        <h2>Misión</h2>
+        <p>Aquí va la información sobre la misión.</p>
+    </section>
+    
+    <section id="vision">
+        <h2>Visión</h2>
+        <p>Aquí va la información sobre la visión.</p>
+    </section>
+    
+    <section id="nuevos-productos">
+        <h2>Nuevos Productos</h2>
+        <div id="future-products-container" class="products-container">
+            <!-- Aquí se generarán las tarjetas de los nuevos productos -->
+        </div>
+    </section>
+    
+    <section id="eventos">
+        <h2>Eventos</h2>
+        <p>Aquí va la información sobre eventos.</p>
+    </section>
+    
+    <section id="formulario">
+        <h2>Formulario</h2>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4pz0_L91J0NEewA_0qJZsOyqux7CKkIVTebniNHoKiU-SsA/viewform?usp=sf_link" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Google_Forms_2020_Logo.svg/800px-Google_Forms_2020_Logo.svg.png" alt="Ícono del formulario" class="form-icon">
+        </a>
+        <p>Haz clic en el ícono para acceder al formulario.</p>
+    </section>
+    
+    <section id="redes-sociales">
+        <h2>Redes Sociales</h2>
+        <p>Para más información, contáctanos al correo: info@breakpoint.com</p>
+    <!-- Enlace de Instagram con ícono -->
+    <a href="https://www.instagram.com/break.point_store?igsh=eHl1eW5yYzNxenVk" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="instagram-logo">
+    </a>
+    </section>
+    <footer>
+        <p>BreakPoint &copy; 2024</p>
+    </footer>
+
+    <script src="bp.js"></script>
+</body>
+   <!-- Modal para mostrar más fotos -->
+   <div id="photo-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modal-carousel"></div>
+        <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+</div>
+
+    <!-- Modal para pedir el producto -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderModal()">&times;</span>
+            <h2>Pedido de Producto</h2>
+            <form id="order-form">
+                <label for="customer-name">Nombre:</label>
+                <input type="text" id="customer-name" required>
+                <label for="customer-email">Email:</label>
+                <input type="email" id="customer-email" required>
+                <label for="product-id">ID del Producto:</label>
+                <input type="text" id="product-id" readonly>
+                <button type="submit">Enviar Pedido</button>
+            </form>
+        </div>
+    </div>
+</html>

@@ -1,0 +1,54 @@
+<!-- product-details.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <link rel="stylesheet" href="pedido.css"> <!-- Asegúrate de enlazar tu CSS -->
+</head>
+<body>
+    <div class="order-container">
+        <div class="logo-container">
+            <img src="bp.png" alt="Logo de la Tienda" class="logo">
+        </div>
+        <div id="product-details-container">
+            <h2 id="product-name"></h2>
+            <img id="product-image" alt="Imagen del producto" class="product-image">
+            <p id="product-description" class="description"></p>
+            <p class="price" id="product-price"></p>
+            <div id="extra-info-container">
+                <h3>Información Extra</h3>
+                <p id="extra-info"></p>
+            </div>
+            <div id="images-container">
+                <h3>Imágenes del Producto</h3>
+                <div id="carousel-container"></div> <!-- Este será el contenedor para las imágenes -->
+            </div>
+            <form id="purchase-form" class="purchase-form">
+                <h2>Información de Compra</h2>
+                <label for="buyer-name">Nombre:</label>
+                <input type="text" id="buyer-name" required>
+        
+                <label for="buyer-email">Email:</label>
+                <input type="email" id="buyer-email" required>
+        
+                <label for="buyer-phone">Teléfono:</label>
+                <input type="text" id="buyer-phone" required>
+        
+                <label for="buyer-address">Dirección:</label>
+                <input type="text" id="buyer-address" required></input>
+
+                <label for="card-num">Numero de Tarjeta:</label>
+                <input type="text" id="card-num" required></input>
+        
+                <button type="submit" class="submit-btn">Enviar Pedido</button>
+            </form>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="pedido.js"></script> <!-- Enlaza tu archivo JS -->
+</body>
+</html>
